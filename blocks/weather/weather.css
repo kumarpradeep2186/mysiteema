@@ -1,0 +1,76 @@
+.weather ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.weather li {
+  display: grid;
+  align-content: center;
+  gap: 2px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background-color: var(--golf-tile, #111715);
+  color: #fff;
+  text-align: center;
+}
+
+.weather .weather-day {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+.weather .weather-temp {
+  font-family: var(--golf-display-font, sans-serif);
+  font-size: 20px;
+  font-stretch: 125%;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.weather li.weather-detailed {
+  grid-column: 1 / -1;
+  grid-template-columns: 1fr auto;
+  column-gap: 16px;
+  text-align: left;
+}
+
+.weather .weather-details {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  align-self: center;
+  font-size: 12px;
+}
+
+.weather .weather-details p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.weather .icon img {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+@media (width >= 900px) {
+  .weather ul {
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .weather li.weather-detailed {
+    grid-column: auto;
+  }
+
+  .weather .weather-temp {
+    font-size: 22px;
+  }
+}

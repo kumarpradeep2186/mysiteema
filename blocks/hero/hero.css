@@ -35,3 +35,52 @@
     padding: 40px 32px;
   }
 }
+
+/* golf variant: tall photo hero with centered display headline */
+.hero.golf {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 480px;
+  padding: 64px 24px 72px;
+  isolation: isolate;
+  text-align: center;
+}
+
+.hero.golf::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 45%) 100%);
+}
+
+.hero.golf picture {
+  z-index: -2;
+}
+
+.hero.golf h1 {
+  max-width: 960px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+@media (width >= 600px) {
+  .hero.golf h1 {
+    font-size: 52px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero.golf {
+    min-height: 640px;
+    padding: 80px 32px 120px;
+  }
+
+  .hero.golf h1 {
+    font-size: 72px;
+  }
+}

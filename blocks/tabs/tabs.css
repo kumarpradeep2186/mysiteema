@@ -1,0 +1,133 @@
+.tabs {
+  margin-top: 32px;
+}
+
+.tabs .tabs-list {
+  display: flex;
+}
+
+.tabs .tabs-tab {
+  display: grid;
+  flex: 1 1 0;
+  grid-template-columns: auto 1fr;
+  align-content: center;
+  column-gap: 12px;
+  margin: 0;
+  border: 0;
+  border-radius: 16px 16px 0 0;
+  padding: 14px 16px;
+  background-color: var(--golf-mint, #e3f8f1);
+  color: var(--golf-green-900, #0a332d);
+  font-size: 11px;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+}
+
+.tabs .tabs-tab[aria-selected='true'] {
+  background-color: var(--golf-green-950, #042f26);
+  color: #fff;
+}
+
+.tabs .tabs-tab:focus-visible {
+  outline: 2px solid var(--golf-green-700, #0a584b);
+  outline-offset: 2px;
+}
+
+.tabs .tabs-tab-icon {
+  grid-row: span 2;
+  align-self: center;
+}
+
+.tabs .tabs-tab .icon img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+/* icons are white; render them dark on inactive tabs */
+.tabs .tabs-tab[aria-selected='false'] .icon img {
+  filter: brightness(0);
+}
+
+.tabs .tabs-tab strong {
+  font-family: var(--golf-display-font, sans-serif);
+  font-size: 12px;
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.tabs .tabs-tab[aria-selected='false'] strong {
+  font-weight: 400;
+}
+
+.tabs .tabs-panel {
+  display: grid;
+  gap: 24px;
+  border-radius: 0 0 16px 16px;
+  padding: 24px;
+  background-color: var(--golf-green-950, #042f26);
+  color: #fff;
+}
+
+.tabs .tabs-panel[hidden] {
+  display: none;
+}
+
+.tabs .tabs-panel:focus-visible {
+  outline: 2px solid var(--golf-green-700, #0a584b);
+  outline-offset: 2px;
+}
+
+.tabs .tabs-panel-content > * {
+  margin: 0;
+}
+
+.tabs .tabs-panel-content p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.tabs .tabs-panel-content > p:first-child {
+  margin-bottom: 8px;
+}
+
+.tabs .tabs-panel-content h3 {
+  margin-top: 20px;
+  margin-bottom: 2px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.tabs .tabs-panel-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+@media (width >= 900px) {
+  .tabs {
+    margin-top: 40px;
+  }
+
+  .tabs .tabs-tab {
+    flex: 0 0 280px;
+    padding: 16px 24px;
+  }
+
+  .tabs .tabs-tab strong {
+    font-size: 13px;
+  }
+
+  .tabs .tabs-panel {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 32px;
+    border-radius: 0 16px 16px;
+    padding: 32px;
+  }
+}

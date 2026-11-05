@@ -6,6 +6,14 @@
 
 export default function decorate(block) {
   [...block.children].forEach((row) => {
+    // a single-cell row is a group title for the items that follow
+    if (row.children.length === 1) {
+      const title = document.createElement('h3');
+      title.className = 'accordion-group-title';
+      title.textContent = row.textContent.trim();
+      row.replaceWith(title);
+      return;
+    }
     // decorate accordion item label
     const label = row.children[0];
     const summary = document.createElement('summary');

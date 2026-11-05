@@ -1,27 +1,5 @@
 @import url('./accordion-tokens.css');
 
-@font-face {
-  font-family: 'Instrument Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url('../../fonts/instrument-sans-regular.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Instrument Sans';
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: url('../../fonts/instrument-sans-semibold.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: instrument-sans-fallback;
-  size-adjust: 100%;
-  src: local('Arial');
-}
-
 .accordion {
   display: flex;
   flex-direction: column;
@@ -120,4 +98,68 @@
 
 .accordion details .accordion-item-body > * + * {
   margin-top: 0.8em;
+}
+
+/* faq variant: titled group of items on a translucent panel */
+.accordion.faq {
+  gap: 0;
+  max-width: none;
+  margin-top: 32px;
+  border-radius: var(--accordion-radius);
+  background-color: rgb(10 51 45 / 35%);
+  overflow: hidden;
+}
+
+.accordion.faq .accordion-group-title {
+  margin: 0;
+  padding: 16px 24px;
+  background-color: var(--golf-green-900, #0a332d);
+  color: #fff;
+  font-size: 14px;
+}
+
+.accordion.faq details {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.accordion.faq details + details {
+  border-top: 1px solid rgb(255 255 255 / 35%);
+}
+
+.accordion.faq details summary {
+  background-color: transparent;
+  color: var(--golf-green-900, #0a332d);
+  font-size: 14px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.accordion.faq details summary::after {
+  color: var(--golf-green-900, #0a332d);
+}
+
+.accordion.faq details summary:hover {
+  background-color: rgb(255 255 255 / 20%);
+}
+
+.accordion.faq details summary:hover::after {
+  color: var(--golf-green-900, #0a332d);
+}
+
+.accordion.faq details .accordion-item-body {
+  padding-top: 0;
+  color: var(--golf-green-900, #0a332d);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+@media (width >= 900px) {
+  .accordion.faq {
+    margin-top: 48px;
+  }
+
+  .accordion.faq .accordion-group-title {
+    font-size: 16px;
+  }
 }

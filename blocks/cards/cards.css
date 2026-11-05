@@ -25,3 +25,132 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+/* info variant: tilted green cards with icon, title and link */
+.cards.info > ul {
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.cards.info > ul > li {
+  --cards-tilt: -2deg;
+
+  position: relative;
+  display: flex;
+  border: 0;
+  border-radius: 24px;
+  background-color: var(--golf-green-700, #0a584b);
+  color: #fff;
+  transform: rotate(var(--cards-tilt));
+  transition: transform 0.2s ease;
+}
+
+.cards.info > ul > li:nth-child(even) {
+  --cards-tilt: 2deg;
+}
+
+.cards.info > ul > li:hover,
+.cards.info > ul > li:focus-within {
+  transform: rotate(0) translateY(-4px);
+}
+
+.cards.info > ul > li:has(a:focus-visible) {
+  outline: 2px solid var(--golf-green-900, #0a332d);
+  outline-offset: 4px;
+}
+
+.cards.info .cards-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 200px;
+  margin: 0;
+  padding: 28px;
+}
+
+.cards.info .cards-card-body > * {
+  margin: 0;
+}
+
+.cards.info .icon img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+.cards.info .cards-card-body > h3 {
+  margin-top: 16px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.cards.info .cards-card-body > p:last-child {
+  margin-top: auto;
+  padding-top: 24px;
+  text-align: right;
+}
+
+.cards.info a:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* stretch the link over the whole card */
+.cards.info a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.cards.info a::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background: url('../../icons/arrow-right.svg') center / contain no-repeat;
+}
+
+.cards.info a:hover {
+  text-decoration: none;
+}
+
+.cards.info a:focus-visible {
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards.info > ul > li {
+    transition: none;
+  }
+}
+
+@media (width >= 600px) {
+  .cards.info > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .cards.info > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 56px;
+  }
+
+  .cards.info .cards-card-body {
+    min-height: 280px;
+    padding: 32px;
+  }
+
+  .cards.info .cards-card-body > h3 {
+    font-size: 24px;
+  }
+}
