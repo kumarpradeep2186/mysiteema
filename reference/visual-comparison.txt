@@ -1,0 +1,9 @@
+Viewport: 1440px (component frame 720px wide)
+Geometry: n/a (no images in design)
+Spacing: 1/1 sections PASS
+  accordion item closed height 56/56 PASS  item open height 169/170 PASS  item gap 12/12 PASS  width 720/720 PASS
+  deviations: none
+Colors: border #e8651a / hover #0f1a14, summary #f2ece3 / hover #e8651a, label #0f1a14, body #3d4f45, icon #e8651a / hover #fff (closed) / #f2ece3 (open) - all match
+Typography: resolved (Instrument Sans 400/600 self-hosted, document.fonts.check true)
+Mobile 375px: block 327px wide, no horizontal overflow
+Unresolved: none

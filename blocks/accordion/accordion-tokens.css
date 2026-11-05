@@ -1,0 +1,31 @@
+/* Design tokens from Figma: WKND Adventures - Accordion */
+.accordion {
+  /* colors */
+  --accordion-color-accent: #e8651a;
+  --accordion-color-ink: #0f1a14;
+  --accordion-color-body: #3d4f45;
+  --accordion-color-surface: #f2ece3;
+  --accordion-color-white: #fff;
+
+  /* typography */
+  --accordion-font-family: 'Instrument Sans', instrument-sans-fallback, sans-serif;
+  --accordion-label-font-size: 18px;
+  --accordion-label-font-weight: 600;
+  --accordion-label-line-height: 22px;
+  --accordion-icon-font-size: 20px;
+  --accordion-icon-line-height: 20px;
+  --accordion-body-font-size: 16px;
+  --accordion-body-font-weight: 400;
+  --accordion-body-line-height: 27px;
+
+  /* layout */
+  --accordion-max-width: 720px;
+  --accordion-item-gap: 12px;
+  --accordion-radius: 16px;
+  --accordion-border-width: 1px;
+  --accordion-padding-block: 16px;
+  --accordion-padding-inline: 24px;
+  --accordion-icon-size: 20px;
+  --accordion-body-max-height: 480px;
+  --accordion-transition: 0.2s ease;
+}

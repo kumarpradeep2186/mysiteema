@@ -1,0 +1,32 @@
+{
+  "pageName": "accordion",
+  "fileKey": "eGmcjJEw2XHyjkk04Hdv9r",
+  "pageNodeId": "7759:4",
+  "totalBlocks": 1,
+  "notes": "Figma frame is a component sheet showing 4 states of one accordion (closed/opened x default/hover). Migrated as a single accordion block with 2 items; hover states become :hover CSS.",
+  "blocks": [
+    {
+      "order": 1,
+      "nodeId": "7759:4",
+      "figmaName": "WKND Adventures - Accordion",
+      "states": {
+        "closedDefault": "7760:371",
+        "closedHover": "7760:379",
+        "openedDefault": "7760:350",
+        "openedHover": "7760:386"
+      },
+      "suggestedBlockType": "accordion",
+      "suggestedVariantName": "accordion",
+      "rowCount": 2,
+      "width": 720,
+      "height": 170,
+      "y": 0,
+      "status": "completed",
+      "hasImages": false,
+      "imageValidation": "n/a",
+      "variantName": "accordion",
+      "blockType": "accordion",
+      "validation": "passed"
+    }
+  ]
+}

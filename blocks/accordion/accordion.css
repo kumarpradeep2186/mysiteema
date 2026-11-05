@@ -1,0 +1,123 @@
+@import url('./accordion-tokens.css');
+
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../fonts/instrument-sans-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../../fonts/instrument-sans-semibold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: instrument-sans-fallback;
+  size-adjust: 100%;
+  src: local('Arial');
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: var(--accordion-item-gap);
+  max-width: var(--accordion-max-width);
+  margin-inline: auto;
+  font-family: var(--accordion-font-family);
+}
+
+.accordion details {
+  border: var(--accordion-border-width) solid var(--accordion-color-accent);
+  border-radius: var(--accordion-radius);
+  background-color: var(--accordion-color-surface);
+  overflow: hidden;
+  transition: border-color var(--accordion-transition);
+}
+
+.accordion details summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--accordion-padding-inline);
+  padding: var(--accordion-padding-block) var(--accordion-padding-inline);
+  background-color: var(--accordion-color-surface);
+  color: var(--accordion-color-ink);
+  font-size: var(--accordion-label-font-size);
+  font-weight: var(--accordion-label-font-weight);
+  line-height: var(--accordion-label-line-height);
+  cursor: pointer;
+  list-style: none;
+  transition: background-color var(--accordion-transition);
+}
+
+.accordion details summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion details summary > * {
+  margin: 0;
+  font: inherit;
+}
+
+.accordion details summary::after {
+  content: '+' / '';
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: var(--accordion-icon-size);
+  height: var(--accordion-icon-size);
+  color: var(--accordion-color-accent);
+  font-size: var(--accordion-icon-font-size);
+  font-weight: 400;
+  line-height: var(--accordion-icon-line-height);
+  transition: transform var(--accordion-transition), color var(--accordion-transition);
+}
+
+.accordion details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.accordion details summary:focus-visible {
+  outline: 2px solid var(--accordion-color-ink);
+  outline-offset: -4px;
+}
+
+.accordion details:hover {
+  border-color: var(--accordion-color-ink);
+}
+
+.accordion details summary:hover {
+  background-color: var(--accordion-color-accent);
+}
+
+.accordion details summary:hover::after {
+  color: var(--accordion-color-white);
+}
+
+.accordion details[open] summary:hover::after {
+  color: var(--accordion-color-surface);
+}
+
+.accordion details .accordion-item-body {
+  max-height: var(--accordion-body-max-height);
+  padding: var(--accordion-padding-block) var(--accordion-padding-inline);
+  overflow: auto;
+  color: var(--accordion-color-body);
+  font-size: var(--accordion-body-font-size);
+  font-weight: var(--accordion-body-font-weight);
+  line-height: var(--accordion-body-line-height);
+}
+
+.accordion details .accordion-item-body > * {
+  margin: 0;
+}
+
+.accordion details .accordion-item-body > * + * {
+  margin-top: 0.8em;
+}
